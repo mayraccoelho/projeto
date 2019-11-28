@@ -32,7 +32,7 @@
 
 <tr>
 <td>GET</td>
-<td>Listar por aeronaves</td>
+<td>Listar por aeronave</td>
 <td>'/aeronaves/:aeronave'</td>
 </tr>
 
