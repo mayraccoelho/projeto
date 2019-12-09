@@ -1,10 +1,10 @@
 const express = require("express")
 const router = express.Router()
-const controller = require("../controllers/aeronavesController")
+const controller = require("../controllers/ocorrenciasController")
 
-router.get("/", controller.getAeronaves)
-router.get("/:aeronave", controller.getAeronave)
-//outer.get("/:fabricante", controller.getFabricante)
+router.get("/", controller.getOcorrencias)
+router.get("/:id", controller.getOcorrencia)
+//router.get("/fabricantes/:fabricante", controller.getFabricante)
 //router.get("/acidentes", controller.getAcidentes)
 
 router.post("/", controller.post)
