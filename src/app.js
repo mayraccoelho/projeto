@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const app = express()
 
-mongoose.connect("mongodb+srv://admin:admin1304@cluster0-heovg.mongodb.net/aeronaves", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://admin:admin123@acidentesaereos-gocve.mongodb.net/acidentesaereos", { useNewUrlParser: true });
 
 
 let db = mongoose.connection;
@@ -14,7 +14,7 @@ db.once("open", function () {
 })
 
 
-const aeronaves = require("../src/routes/aeronavesRoute")
+const ocorrencias = require("../src/routes/ocorrenciasRoute")
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
@@ -27,6 +27,6 @@ app.use(function (req, res, next) {
 
 app.use(bodyParser.json());
 
-app.use("/aeronaves", aeronaves)
+app.use("/ocorrencias", ocorrencias)
 
 module.exports = app
