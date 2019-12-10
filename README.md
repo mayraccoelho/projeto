@@ -13,7 +13,8 @@
 - Express<br>
 - Nodemon<br>
 - Mongoose<br>
-- BodyParser<br>
+- Body-parser<br>
+- FS<br>
 
 ## Endpoints Criados
 
