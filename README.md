@@ -14,7 +14,7 @@
 - Nodemon<br>
 - Mongoose<br>
 - Body-parser<br>
-- FS<br>
+- Fs<br>
 
 ## Endpoints Criados
 
