@@ -3,9 +3,8 @@ const router = express.Router()
 const controller = require("../controllers/ocorrenciasController")
 
 router.get("/", controller.getOcorrencias)
-router.get("/teste", controller.getTeste)
 router.get("/:id", controller.getOcorrencia)
-//router.get("/fabricantes/:fabricante", controller.getFabricante)
+// router.get("/fabricantes/:fabricante", controller.getFabricante)
 //router.get("/acidentes", controller.getAcidentes)
 
 router.post("/", controller.post)
