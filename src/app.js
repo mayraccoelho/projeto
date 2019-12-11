@@ -6,7 +6,6 @@ const app = express()
 
 mongoose.connect("mongodb+srv://admin:admin123@acidentesaereos-gocve.mongodb.net/acidentesaereos", { useNewUrlParser: true });
 
-
 let db = mongoose.connection;
 db.on("error", console.log.bind(console, "connection error:"))
 db.once("open", function () {

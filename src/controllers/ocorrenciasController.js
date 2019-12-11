@@ -1,4 +1,8 @@
 const Ocorrencias = require('../model/ocorrencias');
+// const http = require('http')
+// const htmlCreator = require('html-creator');
+const PDFKit = require('pdfkit');
+const fs = require('fs');
 
 //GET
 exports.getOcorrencias = (req, res) => {
@@ -22,6 +26,19 @@ exports.getOcorrencia = (req, res) => {
   })
 }
 
+
+exports.getTeste = (req, res) => {
+  Ocorrencias.find(function (err, ocorrencias) {
+    if (err) res.status(500).send(err);
+    const pdf = new PDFKit();
+
+    pdf.text(ocorrencias);
+
+    pdf.pipe(fs.createWriteStream('ocorrencias.pdf'));
+    pdf.end();
+    res.status(200).send(ocorrencias);
+  })
+}
 
 //POST
 exports.post = (req, res) => {
