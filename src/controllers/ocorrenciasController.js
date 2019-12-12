@@ -12,7 +12,7 @@ exports.getOcorrencias = (req, res) => {
       .font('Helvetica')
       .fontSize('13')
       .fillColor('#6155a4')
-      .text(` ${ocorrencias[0].especificacaoTecnica}`, {
+      .text(`${ocorrencias}`, {
         align: 'left'
       })
 
@@ -36,13 +36,25 @@ exports.getOcorrencia = (req, res) => {
   })
 }
 
-// exports.getFabricante = (req, res) => {
-//   const fabricantes = req.params.fabricante;
-//   Ocorrencias.find({ fabricantes }, function (err, fabricante) {
-//     if (err) res.status(500).send(err);
-//     res.status(200).send(fabricante);
-//   })
-// }
+exports.getFabricante = (req, res) => {
+  const fabricantes = req.params.fabricante;
+  Ocorrencias.find({ "especificacaoTecnica.fabricante":  fabricantes 
+  }, function (err, fabricante) {
+      if (err) res.status(500).send(err)
+      res.status(200).send(fabricante);
+  });  
+}
+
+exports.getVitimas = (req, res) => {
+  Ocorrencias.find({ "informacoesOcorrencia.vitimasFatais" : vitimasFatais
+  }, function (err, vitimas) {
+      if (err) res.status(500).send(err)
+      res.status(200).send(vitimas);
+  });  
+}
+
+
+
 
 //POST
 exports.post = (req, res) => {

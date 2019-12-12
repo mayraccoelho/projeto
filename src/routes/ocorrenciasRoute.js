@@ -4,8 +4,8 @@ const controller = require("../controllers/ocorrenciasController")
 
 router.get("/", controller.getOcorrencias)
 router.get("/:id", controller.getOcorrencia)
-// router.get("/fabricantes/:fabricante", controller.getFabricante)
-//router.get("/acidentes", controller.getAcidentes)
+router.get("/fabricantes/:fabricante", controller.getFabricante)
+router.get("/vitimasfatais", controller.getVitimas)
 
 router.post("/", controller.post)
 
