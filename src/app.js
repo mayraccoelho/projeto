@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const bodyParser = require('body-parser');
+const path = require('path')
 
 const app = express()
 
@@ -27,5 +28,9 @@ app.use(function (req, res, next) {
 app.use(bodyParser.json());
 
 app.use("/ocorrencias", ocorrencias)
+app.use(express.static('doc'))
+app.get('/api-doc', function(req, res){
+  res.sendfile(path.join(__dirname+'/../doc/index.html'))
+})
 
 module.exports = app

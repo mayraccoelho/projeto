@@ -7,12 +7,14 @@ const fs = require('fs');
 exports.getOcorrencias = (req, res) => {
   Ocorrencias.find(function (err, ocorrencias) {
     if (err) res.status(500).send(err);
+    let quantidadeAcidentes = Ocorrencias.find().count()
+    let vitimasF ='ds'
     const pdf = new PDFKit();
     pdf
       .font('Helvetica')
       .fontSize('13')
-      .fillColor('#6155a4')
-      .text(`${ocorrencias}`, {
+      .fillColor('#000')
+      .text(`Relatórios Finais de Investigação de Acidentes e Incidentes Aeronáuticos\n\n\nO objetivo das investigações realizadas pelo Sistema de Investigação e Prevenção de Acidentes Aeronáuticos (SIPAER) é a prevenção de futuros acidentes aeronáuticos e não a atribuição de culpa ou responsabilidade. O uso dos relatórios abaixo listados para qualquer outro fim poderá trazer efeitos adversos à prevenção de novas ocorrências.\n\nAté o momento todos os acidentes aéreos somam o total de: ${quantidadeAcidentes} com ${vitimasF} de vítimas fatais. `, {
         align: 'left'
       })
 
@@ -46,7 +48,7 @@ exports.getFabricante = (req, res) => {
 }
 
 exports.getVitimas = (req, res) => {
-  Ocorrencias.find({ "informacoesOcorrencia.vitimasFatais" : vitimasFatais
+  Ocorrencias.find({ "informacoesOcorrencia.vitimasFatais": { $gt: 0 } 
   }, function (err, vitimas) {
       if (err) res.status(500).send(err)
       res.status(200).send(vitimas);
