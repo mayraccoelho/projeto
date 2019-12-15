@@ -41,7 +41,7 @@
 
 <tr>
 <td>GET</td>
-<td>Buscar ocorrências específica por ID</td>
+<td>Buscar ocorrência específica por ID</td>
 <td>'/ocorrencias/:id'</td>
 </tr>
 
