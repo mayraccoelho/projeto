@@ -15,6 +15,7 @@
 - Mongoose<br>
 - Body-parser<br>
 - Fs<br>
+- Pdfkit <br>
 
 ## Endpoints Criados
 
@@ -25,34 +26,53 @@
 <th>Caminho</th>
 </thead>
 <tbody>
+
 <tr>
 <td>GET</td>
-<td>Listar todas as aeronaves</td>
-<td>'/aeronaves'
+<td>Listar todas as ocorrências</td>
+<td>'/ocorrencias'
 </tr>
 
 <tr>
 <td>GET</td>
-<td>Listar por aeronave</td>
-<td>'/aeronaves/:aeronave'</td>
+<td>Gerar PDF</td>
+<td>'/ocorrencias/gerar/pdf'
+</tr>
+
+<tr>
+<td>GET</td>
+<td>Buscar ocorrências específica por ID</td>
+<td>'/ocorrencias/:id'</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>Listar ocorrencias que tiveram vítimas fatais</td>
+<td>'/ocorrencias/vitimasfatais'</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>Buscar ocorrências por fabricante da aeronave</td>
+<td>'/ocorrencias/fabricantes/:fabricante'</td>
 </tr>
 
 <tr>
 <td>POST</td>
-<td>Adicionar nova aeronave</td>
-<td>'/aeronaves'</td>
+<td>Adicionar ocorrência</td>
+<td>'/ocorrencias'</td>
 </tr>
 
 <tr>
 <td>PUT</td>
-<td>Atualizar aeronave por ID</td>
-<td>'/aeronaves/:id'</td>
+<td>Atualizar ocorrência por ID</td>
+<td>'/ocorrencias/:id'</td>
 </tr>
 
 <tr>
 <td>DELETE</td>
-<td>Deletar aeronave por ID</td>
-<td>'/aeronaves/:id'</td>
+<td>Deletar ocorrência por ID</td>
+<td>'/ocorrencias/:id'</td>
 </tr>
 </table>
 
