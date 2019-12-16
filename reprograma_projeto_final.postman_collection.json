@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "1b9e81bd-22b3-4433-a410-7aea9d70273b",
+		"name": "reprograma_projeto_final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "aeronaves.listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ocorrencias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ocorrencias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ocorrencias.listar.gerando.pdf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ocorrencias/gerar/pdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ocorrencias",
+						"gerar",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aeronaves.listar.uma",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ocorrencias/5deaccd1a091532838646085",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ocorrencias",
+						"5deaccd1a091532838646085"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aeronaves.listar.vitimas.fatais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ocorrencias/vitimasfatais",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ocorrencias",
+						"vitimasfatais"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aeronaves.listar.fabricantes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ocorrencias/fabricantes/Cessna",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ocorrencias",
+						"fabricantes",
+						"Cessna"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aeronaves.adicionar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"especificacaoTecnica\": {\r\n        \"fabricante\": \"TESTANDO BRASIL\",\t\r\n        \"modelo\": \"PA-18/135\",\r\n        \"prefixo\": \"PT-ARV\"\r\n    },\r\n    \"ramo\": \"Aviação Geral\",\r\n    \"informacoesVoo\": {\r\n    \t\"companhiaAerea\": null,\r\n    \t\"voo\": null,\r\n    \t\"origem\": \"Itapebi\", \r\n    \t\"destino\": \"SNEP\"\r\n    },\r\n    \"informacoesOcorrencia\": {\r\n    \t\"classificacao\": \"Acidente\",\r\n    \t\"data\": \"10/03/1966\",\r\n    \t\"tipo\": \"Colisão com Obstáculo no Solo\",\r\n    \t\"cidade\": \"Eunápolis\",\r\n    \t\"estado\": \"BA\",\r\n    \t\"pais\": \"Brasil\",\r\n    \t\"vitimas\": 1,\r\n    \t\"vitimasFatais\": 0\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/ocorrencias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ocorrencias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aeronaves.atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"especificacaoTecnica\": {\r\n            \"fabricante\": \"ATUALIZANDO TESTE\",\r\n            \"modelo\": \"47J\",\r\n            \"prefixo\": \"PT-HDU\"\r\n    \t\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/ocorrencias/5df4d88387771f13fc34e00d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ocorrencias",
+						"5df4d88387771f13fc34e00d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aeronaves.deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/ocorrencias/5df3e7f1ff132834609c0c45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ocorrencias",
+						"5df3e7f1ff132834609c0c45"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
