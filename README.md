@@ -41,14 +41,14 @@
 
 <tr>
 <td>GET</td>
-<td>Buscar ocorrência específica por ID</td>
-<td>'/ocorrencias/:id'</td>
+<td>Listar ocorrencias que tiveram vítimas fatais</td>
+<td>'/ocorrencias/vitimasfatais'</td>
 </tr>
 
 <tr>
 <td>GET</td>
-<td>Listar ocorrencias que tiveram vítimas fatais</td>
-<td>'/ocorrencias/vitimasfatais'</td>
+<td>Buscar ocorrência específica por ID</td>
+<td>'/ocorrencias/:id'</td>
 </tr>
 
 <tr>
