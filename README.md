@@ -1,5 +1,6 @@
 # Reprograma + Mercado Livre | Projeto Final 
 ##### Desenvolvimento de API 'Vamos voar em segurança'
+###### Esta API tem como finalidade gerar relatório estatístico personalizado de todos os incidentes, incidentes graves e acidentes aéreos que já possuem relatório final oficial realizado pelo CENIPA. O objetivo é proporcionar a conscientização de vários elementos que possam contribuir para um acidente aéreo.
 
 ## Tecnologias Utilizadas
 ### Linguagens
