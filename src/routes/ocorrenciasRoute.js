@@ -2,13 +2,12 @@ const express = require("express")
 const router = express.Router()
 const controller = require("../controllers/ocorrenciasController")
 
+
 /**
- * @api {get} /ocorrencias
- * @apiGroup Ocorrencias
- * * 
- * @apiSuccess {Object[]} ocorrencias Lista de Ocorrencias
- * 
- * @apiSuccessExample {json} Sucesso
+ * @api {get} /ocorrencias Lista todas as ocorrencias
+ * @apiGroup Vamos Voar em Seguranca
+ * @apiName getOcorrencias
+ * @apiSuccessExample Success-Response:
  *    HTTP/1.1 200 OK
  *   
  *    [{   
@@ -36,8 +35,8 @@ const controller = require("../controllers/ocorrenciasController")
  *           "vitimas": 97,
  *           "vitimasFatais": 97
  *       },
- *   }
- *   }]
+ *      }
+ *    }]
  *
  */
 
@@ -46,13 +45,14 @@ router.get("/", controller.getOcorrencias)
 
 /**
  * @api {get} /ocorrencias Lista todas as ocorrencias gerando arquivo PDF
- * @apiName getOcorrencias
+ * @apiGroup Vamos Voar em Seguranca
+ * @apiName getPdf
  *
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
- *  {
- *  "mensagem": "PDF gerado com sucesso"
+ *   {
+ *       "mensagem": "PDF gerado com sucesso"
  *   }
  * 
  */
@@ -62,12 +62,13 @@ router.get("/gerar/pdf", controller.getPdf)
 
 /**
  * @api {get} ocorrencias/:id Lista unica ocorrencia por ID
- * @apiName getOcorrencia
+ * @apiGroup Vamos Voar em Seguranca
+ * @apiName getVitimas
  *
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
- *   [{  
+ *    [{  
  *       "_id": "5deaccd1a091532838646085",
  *   
  *       "especificacaoTecnica": {
@@ -92,7 +93,7 @@ router.get("/gerar/pdf", controller.getPdf)
  *           "vitimas": 97,
  *           "vitimasFatais": 97
  *       },
- *   }]
+ *    }]
  */
 
 
@@ -100,7 +101,8 @@ router.get("/vitimasfatais", controller.getVitimas)
 
 /**
  * @api {get} ocorrencias/fabricantes/:fabricante Lista todas as ocorrencias por fabricante
- * @apiName getFabricante
+ * @apiGroup Vamos Voar em Seguranca
+ * @apiName getOcorrencia
  *
  *
  * @apiSuccessExample Success-Response:
@@ -138,7 +140,8 @@ router.get("/:id", controller.getOcorrencia)
 
 /**
  * @api {get} ocorrencias/vitimasfatais Lista todas as ocorrencias que tiveram vitimas fatais
- * @apiName getVitimas
+ * @apiGroup Vamos Voar em Seguranca
+ * @apiName getFabricante
  *
  *
  * @apiSuccessExample Success-Response:
@@ -169,7 +172,7 @@ router.get("/:id", controller.getOcorrencia)
  *           "vitimas": 97,
  *           "vitimasFatais": 97
  *       },
- *    }]
+ *     }]
  */
 
 
@@ -178,8 +181,9 @@ router.get("/fabricantes/:fabricante", controller.getFabricante)
 
 
 /**
- * @api {post} /ocorrencias
- * @apiName ocorrencias
+ * @api {post} /ocorrencias Inclui uma ocorrencia
+ * @apiGroup Vamos Voar em Seguranca
+ * @apiName post
  * 
  * @apiParam (Request Body) {String} fabricante Fabricante da aeronave.
  * @apiParam (Request Body) {String} modelo Modelo da aeronave.
@@ -213,7 +217,8 @@ router.post("/", controller.post)
 
 /**
  * @api {put} /:id Altera uma ocorrencia por ID
- * @apiName put
+ * @apiGroup Vamos Voar em Seguranca
+ * @apiName update
  *
  * @apiParam (Request Body) {String} fabricante Fabricante da aeronave.
  * @apiParam (Request Body) {String} modelo Modelo da aeronave.
@@ -237,8 +242,8 @@ router.post("/", controller.post)
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *     {
- *   "mensagem": "Atualizado com sucesso"
- *       }
+ *          "mensagem": "Atualizado com sucesso"
+ *      }
  */
 
 router.put('/:id', controller.update)
@@ -246,6 +251,7 @@ router.put('/:id', controller.update)
 
 /**
  * @api {delete} /:id Deleta uma ocorrencia por ID
+ * @apiGroup Vamos Voar em Seguranca
  * @apiName delete
  * 
  * @apiParam {Number} id ID da ocorrencia.
@@ -253,7 +259,7 @@ router.put('/:id', controller.update)
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  *   {
- *   "mensagem": "Ocorrencia removida com sucesso"
+ *        "mensagem": "Ocorrencia removida com sucesso"
  *   }
  */
 
