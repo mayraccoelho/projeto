@@ -15,6 +15,7 @@
 - Mongoose<br>
 - Body-parser<br>
 - Fs<br>
+- ApiDoc <br>
 - Pdfkit <br>
 
 ## Endpoints Criados
@@ -82,3 +83,7 @@
 ## Postman
 
 https://www.getpostman.com/collections/3a7d1c80e80e6a40f200
+
+## Heroku
+
+https://reprograma-projeto-final.herokuapp.com/
